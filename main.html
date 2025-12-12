@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2팀 소개 페이지</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+
+    <header>
+        <h1>팀원 소개 및 미니 퀴즈</h1>
+        <p>HTML, CSS, JavaScript 및 DOM 이벤트를 활용한 페이지입니다.</p>
+    </header>
+
+    <main>
+        <section class="team-member" id="member1">
+            <h2 class="member-name">팀장 : 이은진</h2>
+            <div class="member-details hidden">
+                <p><strong>학번:</strong> 20222937</p>
+                <p><strong>한마디:</strong> H형 개발자를 꿈꾸는 이은진입니다</p>
+                <p><strong>좋아하는 색:</strong> 초록색</p>
+                <p><strong>좋아하는 음식:</strong> 연어</p>
+                <p><strong>고향:</strong> 부산광역시</p>
+                <p><strong>기술 스택:</strong> c, c++, c#, java, python, Spring, Oracle, js etc.</p>
+                <button class="detail-button">숨기기</button>
+            </div>
+        </section>
+
+        <section class="team-member" id="member2">
+            <h2 class="member-name">팀원 : 정유정</h2>
+            <div class="member-details hidden">
+                <p><strong>학번:</strong> [학번]</p>
+                <p><strong>한마디:</strong> [각오/인사말]</p>
+                <button class="detail-button">숨기기</button>
+            </div>
+        </section>
+
+        <section class="team-member" id="member3">
+            <h2 class="member-name">팀원 : 권지우</h2>
+            <div class="member-details hidden">
+                <p><strong>학번:</strong> [학번]</p>
+                <p><strong>한마디:</strong> [각오/인사말]</p>
+                <button class="detail-button">숨기기</button>
+            </div>
+        </section>
+
+        <hr>
+
+        <section id="quiz-section">
+            <h2>미니 퀴즈</h2>
+            <div class="quiz-container">
+                <div class="question" data-answer="연어">
+                    <p>1. 팀원 이은진이 가장 좋아하는 음식은 무엇인가요?</p>
+                    <input type="text" id="q1-input" placeholder="정답 입력">
+                    <button class="submit-quiz" data-question-id="q1-input">정답 확인</button>
+                    <p class="feedback" id="q1-feedback"></p>
+                </div>
+                
+                <div class="question" data-answer="answer2">
+                    <p>2. </p>
+                    <select id="q2-input">
+                        <option value="">-- 선택하세요 --</option>
+                        <option value="answer1">답1</option>
+                        <option value="answer2">답2</option>
+                        <option value="answer3">답3</option>
+                    </select>
+                    <button class="submit-quiz" data-question-id="q2-input">정답 확인</button>
+                    <p class="feedback" id="q2-feedback"></p>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer>
+        <p>&copy; 2025 2팀 All rights reserved.</p>
+    </footer>
+
+    <script src="/script.js"></script>
+</body>
+</html>

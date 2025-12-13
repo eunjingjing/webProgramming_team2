@@ -94,3 +94,40 @@ main {
     margin-top: 10px;
     font-weight: bold;
 }
+
+.color-options {
+    display: flex;
+    gap: 12px;
+}
+
+.color-select {
+    width: 60px;
+    height: 60px;
+    border-radius: 8px;
+    border: 2px solid #ccc;
+    cursor: pointer;
+}
+
+.color-select.red {
+    background-color: red;
+}
+
+.color-select.green {
+    background-color: green;
+}
+
+.color-select.blue {
+    background-color: blue;
+}
+.color-select:hover {
+    filter: brightness(85%);
+}
+
+.color-select:active {
+    filter: brightness(70%);
+}
+
+.color-select.selected {
+    filter: brightness(75%);
+    outline: 3px solid #000;
+}

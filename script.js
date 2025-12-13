@@ -42,3 +42,19 @@ document.querySelectorAll('.submit-quiz').forEach(button => {
         }
     });
 });
+
+
+//색상 버튼 클릭 시 클릭된 버튼에 selected 유지
+document.querySelectorAll('.color-select').forEach(btn => {
+    btn.addEventListener('click', () => {
+        // 다른 선택 해제
+        document.querySelectorAll('.color-select')
+            .forEach(b => b.classList.remove('selected'));
+
+        // 현재 버튼 선택
+        btn.classList.add('selected');
+
+        // hidden input에 값 저장
+        document.getElementById('q3-input').value = btn.dataset.color;
+    });
+});

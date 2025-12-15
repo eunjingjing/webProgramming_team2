@@ -26,10 +26,15 @@ document.querySelectorAll('.submit-quiz').forEach(button => {
         const feedbackElement = document.getElementById(inputId.replace('-input', '-feedback'));
 
         let userAnswer;
-        if (inputElement.tagName === 'INPUT') {
+        // INPUT 또는 SELECT 요소 처리
+        if (inputElement.tagName === 'INPUT' || inputElement.tagName === 'SELECT') {
             userAnswer = inputElement.value.trim();
-        } else if (inputElement.tagName === 'SELECT') {
-            userAnswer = inputElement.value;
+        } 
+        // Radio Button 그룹 처리 (4번 문제)
+        else if (inputElement.id === 'q4-input') {
+            // q4-input은 div이므로, 그 안의 선택된 radio 버튼을 찾습니다.
+            const selectedRadio = inputElement.querySelector('input[name="team_num"]:checked');
+            userAnswer = selectedRadio ? selectedRadio.value : ''; // 선택된 값이 없으면 빈 문자열
         }
 
         // 정답 비교
@@ -57,4 +62,26 @@ document.querySelectorAll('.color-select').forEach(btn => {
         // hidden input에 값 저장
         document.getElementById('q3-input').value = btn.dataset.color;
     });
+});
+
+// 랜덤 음식 추천 시스템
+const foods = [
+    "떡볶이",
+    "라면",
+    "연어"
+];
+
+const recommendButton = document.getElementById('recommend-button');
+const recommendedFoodDisplay = document.getElementById('recommended-food');
+
+recommendButton.addEventListener('click', () => {
+    // 1. 배열의 길이 (8)를 사용하여 0부터 7까지의 난수를 생성합니다.
+    const randomIndex = Math.floor(Math.random() * foods.length); 
+    
+    // 2. 생성된 인덱스로 배열에서 음식을 선택합니다.
+    const selectedFood = foods[randomIndex];
+    
+    // 3. DOM 요소를 조작하여 결과를 화면에 표시합니다.
+    recommendedFoodDisplay.textContent = `오늘의 추천 메뉴는 바로... "${selectedFood}" 입니다! 😋`;
+    recommendedFoodDisplay.style.color = '#ff5722'; // 색상 변경으로 강조
 });

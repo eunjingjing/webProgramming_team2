@@ -90,7 +90,30 @@
                     
                     <p class="feedback" id="q3-feedback"></p>
                 </div>
+                <div class="question" data-answer="2">
+                    <p>4. 우리는 몇 팀일까요?</p>
+                    <div id="q4-input">
+                        <input type="radio" id="team1" name="team_num" value="1">
+                        <label for="team1">1팀</label><br>
+                        <input type="radio" id="team2" name="team_num" value="2">
+                        <label for="team2">2팀</label><br>
+                        <input type="radio" id="team3" name="team_num" value="3">
+                        <label for="team3">3팀</label><br>
+                        <input type="radio" id="team4" name="team_num" value="4">
+                        <label for="team4">4팀</label>
+                    </div>
+                    <button class="submit-quiz" data-question-id="q4-input">정답 확인</button>
+                    <p class="feedback" id="q4-feedback"></p>
+                </div>
             </div>
+        </section>
+
+        </hr>
+        <section id="food-recommendation-section">
+            <h2>🍴 오늘의 식사 메뉴 추천</h2>
+            <p>팀원들이 좋아하는 음식들 중 하나를 랜덤으로 뽑아 추천해 드립니다!</p>
+            <button id="recommend-button">메뉴 추천 받기!</button>
+            <p id="recommended-food">결과가 여기에 표시됩니다.</p>
         </section>
 
     </main>
